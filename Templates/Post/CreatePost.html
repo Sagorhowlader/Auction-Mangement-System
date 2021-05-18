@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block main_head %}
+
+{% endblock main_head %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+  <!-- Name input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form4Example1">Product Name</label>
+      {{form.ProductName}}
+
+  </div>
+
+
+
+
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+      <label class="form-label" for="form4Example3">Product Description</label>
+    {{form.ProductDescription}}
+
+  </div>
+
+<div class="form-outline mb-4">
+    <label class="form-label" for="form4Example2">Minimum Bid Price</label>
+ {{form.MinimumBidPrice}}
+</div>
+    <div class="form-outline mb-4">
+    <label class="form-label" for="form4Example4">File input</label>
+   {{form.image}}
+    </div>
+  <!-- Checkbox -->
+
+
+  <!-- Submit button -->
+  <button type="submit" name="submit_p_form" class="btn btn-primary btn-block mb-4">Upload</button>
+</form>
+{% endblock content %}
